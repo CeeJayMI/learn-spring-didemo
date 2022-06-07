@@ -1,9 +1,6 @@
 package com.jonathanslaven.learnspringdidemo;
 
-import com.jonathanslaven.learnspringdidemo.controllers.ConstructorInjectedController;
-import com.jonathanslaven.learnspringdidemo.controllers.MyController;
-import com.jonathanslaven.learnspringdidemo.controllers.PropertyInjectedController;
-import com.jonathanslaven.learnspringdidemo.controllers.SetterInjectedController;
+import com.jonathanslaven.learnspringdidemo.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,10 @@ public class LearnSpringDidemoApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(LearnSpringDidemoApplication.class, args);
+
+        I18nController i18nController = ctx.getBean(I18nController.class);
+        System.out.println(i18nController.sayHello());
+
 
         MyController myController = ctx.getBean(MyController.class);
 
