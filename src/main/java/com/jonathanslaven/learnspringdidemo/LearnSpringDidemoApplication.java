@@ -14,11 +14,10 @@ public class LearnSpringDidemoApplication {
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(LearnSpringDidemoApplication.class, args);
 
-        MyController myController = (MyController) ctx.getBean("myController");
+        MyController myController = ctx.getBean(MyController.class);
 
-        String greeting = myController.sayHello();
-
-        System.out.println(greeting);
+        System.out.println("PRIMARY BEAN =================");
+        System.out.println(myController.sayHello());
 
         System.out.println("PROPERTY =================");
         PropertyInjectedController propertyInjectedController = ctx.getBean(PropertyInjectedController.class);
