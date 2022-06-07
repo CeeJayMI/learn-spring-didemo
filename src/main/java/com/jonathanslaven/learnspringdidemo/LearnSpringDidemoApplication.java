@@ -21,16 +21,16 @@ public class LearnSpringDidemoApplication {
         System.out.println(greeting);
 
         System.out.println("PROPERTY =================");
-        PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean(PropertyInjectedController.class);
+        PropertyInjectedController propertyInjectedController = ctx.getBean(PropertyInjectedController.class);
         System.out.println(propertyInjectedController.getGreeting());
 
         System.out.println("SETTER =================");
-        SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean((SetterInjectedController.class));
+        SetterInjectedController setterInjectedController = ctx.getBean((SetterInjectedController.class));
         System.out.println(setterInjectedController.getGreeting());
 
         System.out.println("CONSTRUCTOR =================");
-        ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean((ConstructorInjectedController.class));
-        System.out.println(setterInjectedController.getGreeting());
+        ConstructorInjectedController constructorInjectedController = ctx.getBean((ConstructorInjectedController.class));
+        System.out.println(constructorInjectedController.getGreeting());
     }
 
 }

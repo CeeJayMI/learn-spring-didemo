@@ -1,12 +1,15 @@
 package com.jonathanslaven.learnspringdidemo.controllers;
 
 import com.jonathanslaven.learnspringdidemo.services.GreetingService;
+import com.jonathanslaven.learnspringdidemo.services.PropertyGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class PropertyInjectedController {
 
+    @Qualifier("propertyGreetingService")
     @Autowired
     public GreetingService greetingService;
 
